@@ -48,6 +48,7 @@ function App() {
       });
       await response.json();
       fetchOverlays();
+      resetForm();
     } catch (error) {
       console.error("Error adding overlay:", error);
     }

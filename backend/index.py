@@ -1,13 +1,17 @@
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 from flask_pymongo import pymongo
 from bson import json_util, ObjectId
 import json
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path = '', static_folder = '../frontend/build', template_folder = '../frontend/build')
 CONNECTION_STRING="mongodb+srv://melvin:melvin@livestream.uss05xu.mongodb.net/?retryWrites=true&w=majority"
 db = pymongo.MongoClient(CONNECTION_STRING, connect=False).get_database('db')
 user_collection = db['overlays']
 print(user_collection)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/overlays', methods = ["POST"])
 def create_overlay():
