@@ -33,10 +33,10 @@ To get started with the Livestream Overlays app, follow these simple steps:
 5. Start the app by running:
 
    ```bash
-   python3 index.py
+   gunicorn -b 0.0.0.0:10000 index:app
    ```
 
-6. Open your web browser and visit [http://localhost:5000](http://localhost:5000/) to use the Livestream Overlays app.
+6. Open your web browser and visit [http://localhost:10000](http://localhost:10000/) to use the Livestream Overlays app.
 
 # Quickstart
 
@@ -48,8 +48,7 @@ To get started with the Livestream Overlays app, follow these simple steps:
    npm i
    npm run build
    cd ..
-   python3 index.py
-
+   gunicorn -b 0.0.0.0:10000 index:app
 ```
 
-Open your web browser and visit [http://localhost:5000](http://localhost:5000/) to use the Livestream Overlays app.
+Open your web browser and visit [http://localhost:10000](http://localhost:10000/) to use the Livestream Overlays app.

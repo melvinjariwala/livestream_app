@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "pip install -r requirements.txt && cd frontend && npm i && npm run build && cd .. && python3 index.py"
+    "build": "pip install -r requirements.txt && cd frontend && npm i && npm run build && cd ..",
+    "start": "gunicorn -b 0.0.0.0:10000 index:app"
   },
   "author": "",
   "license": "ISC"
