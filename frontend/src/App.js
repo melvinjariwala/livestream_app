@@ -69,7 +69,7 @@ function App() {
     setLeft(10);
     setWidth(20);
     setHeight(10);
-    setSelectedOverlayId(null);
+    setSelectedOverlayId("");
   };
 
   const updateOverlay = async () => {
